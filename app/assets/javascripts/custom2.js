@@ -34,7 +34,7 @@
 		
 
 				var tpj=jQuery;
-				tpj.noConflict();
+				//tpj.noConflict();
 
 				tpj(document).ready(function() {
 
