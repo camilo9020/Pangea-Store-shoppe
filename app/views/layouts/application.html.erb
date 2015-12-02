@@ -2,13 +2,210 @@
 <html>
 <head>
   <title>PangeaStoreShoppe</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="header">
 
-<%= yield %>
+		<div class="header-top">
+			<div class="container">
+				<div class="pull-left auto-width-left">
+					<ul class="top-menu menu-beta l-inline">
+						<li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+						<li><a href="index.html#"><i class="fa fa-sitemap"></i>Mapa del Sitio</a></li>
+					</ul>
+				</div>
+				<div class="pull-right auto-width-right">
+					<ul class="top-details menu-beta l-inline">
+						<li><a href="index.html#"><i class="fa fa-user"></i>Ingresar</a></li>
+						<li class="hidden-xs">
+							<select name="languages">
+								<option value="en">English</option>
+								<option value="es">Español</option>
+							</select>
+						</li>
+						<li class="hidden-xs">
+							<select name="currency">
+								<option value="usd">USD</option>
+								<option value="eur">EUR</option>
+								<option value="col">COL</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div> <!-- .container -->
+		</div> <!-- .header-top -->
+
+		<div class="header-body">
+			<div class="container beta-relative">
+				<div class="pull-left">
+					<a href="index.html" id="logo"><img src="../../assets/logo_pangea_2.png" alt=""></a>
+					<span class="slogan">Una forma de pensar, vivir y comer Saludable</span>
+				</div>
+				<div class="pull-right beta-components space-left ov">
+					<div class="space10">&nbsp;</div>
+					<div class="beta-comp">
+						<form role="search" method="get" id="searchform" action="http://webredox.net/">
+							<input type="text" value="" name="s" id="s" placeholder="Search entire store here..." />
+							<button class="fa fa-search" type="submit" id="searchsubmit"></button>
+						</form>
+					</div>
+
+					<div class="beta-comp">
+						<div class="cart">
+							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Carrito (vacio) <i class="fa fa-chevron-down"></i></div>
+							<div class="beta-dropdown cart-body">
+								<div class="cart-item">
+									<a class="cart-item-edit" href="index.html#"><i class="fa fa-pencil"></i></a>
+									<a class="cart-item-delete" href="index.html#"><i class="fa fa-times"></i></a>
+									<div class="media">
+										<a class="pull-left" href="index.html#"><img src="../../assets/products/cart/1.png" alt=""></a>
+										<div class="media-body">
+											<span class="cart-item-title">Sample Woman Top</span>
+											<span class="cart-item-options">Size: XS; Colar: Navy</span>
+											<span class="cart-item-amount">1*<span>$49.50</span></span>
+										</div>
+									</div>
+								</div>	
+
+								<div class="cart-caption">
+									<div class="cart-total text-right">Subtotal: <span class="cart-total-value">$34.55</span></div>
+									<div class="clearfix"></div>
+
+									<div class="center">
+										<div class="space10">&nbsp;</div>
+										<a href="checkout.html" class="beta-btn primary text-center">Checkout <i class="fa fa-chevron-right"></i></a>
+									</div>
+								</div>
+							</div>
+						</div> <!-- .cart -->
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div> <!-- .container -->
+		</div> <!-- .header-body -->
+
+		<div class="header-bottom">
+			<div class="container">
+				<a class="visible-xs beta-menu-toggle pull-right" href="index.html#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
+				<div class="visible-xs clearfix"></div>
+				<nav class="main-menu">
+					<ul class="l-inline ov">
+						<li><a href="index.html">Home</a>
+							<ul class="sub-menu">
+								<li><a href="home_10.html">Home Portfolio</a></li>
+								<li><a href="home_4.html">Company Intro 1</a></li>
+								<li><a href="home_5.html">Company Intro 2</a></li>
+								<li><a href="home_7.html">Company Intro 3</a></li>
+								<li><a href="home_6.html">Home Classic 1</a></li>
+								<li><a href="home_8.html">Home Classic 2</a></li>
+								<li><a href="home_9.html">Home Classic 3</a></li>
+								<li><a href="index.html">Home Shop 1</a></li>
+								<li><a href="home_2.html">Home Shop 2</a></li>
+								<li><a href="home_3.html">Home Shop 3</a></li>
+							</ul>
+						</li>
+						<li><a href="index.html#">Pages</a>
+							<ul class="sub-menu">
+								<li><a href="about_1.html">About 1</a></li>
+								<li><a href="about_2.html">About 2</a></li>
+								<li><a href="testimonials.html">Testimonials</a></li>
+								<li><a href="text_page.html">Text Page</a></li>
+								<li><a href="typography.html">Typography</a></li>
+								<li><a href="accordion_toggles.html">Accordion and Toggles</a></li>
+								<li><a href="buttons.html">Buttons</a></li>
+								<li><a href="custom_callout_box.html">Custom Callout Box</a></li>
+								<li><a href="404.html">Page 404</a></li>
+								<li><a href="under_construction.html">Coming Soon</a></li>
+							</ul>
+						</li>
+						<li><a href="features.html">Features</a></li>
+						<li><a href="index.html#">Portfolio</a>
+							<ul class="sub-menu">
+								<li><a href="portfolio_type_a.html">Portfolio type A</a></li>
+								<li><a href="index.html#">Portfolio type B</a>
+									<ul class="sub-menu">
+										
+										<li><a href="portfolio_3col.html">Portfolio B - 3 Columns</a></li>
+										<li><a href="portfolio_4col.html">Portfolio B - 4 Columns</a></li>
+									</ul>
+								</li>
+								<li><a href="portfolio_single.html">Portfolio Item</a></li>
+							</ul>
+						</li>
+						<li><a href="index.html#">Blog</a>
+							<ul class="sub-menu">
+								<li><a href="blog_fullwidth_1col.html">Blog Full Width</a>
+									<ul class="sub-menu">
+										<li><a href="blog_fullwidth_2col.html">Blog Full Width - 2 Columns</a></li>
+										<li><a href="blog_fullwidth_3col.html">Blog Full Width - 3 Columns</a></li>
+										<li><a href="blog_fullwidth_4col.html">Blog Full Width - 4 Columns</a></li>
+									</ul>
+								</li>
+								<li><a href="index.html#">Blog Type A</a>
+									<ul class="sub-menu">
+										<li><a href="blog_with_sidebarleft_type_a.html">Blog A - Left Sidebar</a></li>
+										<li><a href="blog_with_sidebarright_type_a.html">Blog A - Right Sidebar</a></li>
+									</ul>
+								</li>
+								<li><a href="blog_with_sidebarleft_type_b.html">Blog Type B</a></li>
+								<li><a href="index.html#">Blog Type C</a>
+									<ul class="sub-menu">
+										<li><a href="blog_with_sidebarleft_type_c.html">Blog C - Left Sidebar</a></li>
+										<li><a href="blog_with_sidebarleft_type_c_2cols.html">Blog C - 2 Columns</a></li>
+									</ul>
+								</li>
+								<li><a href="blog_with_sidebarleft_type_d.html">Blog Type D</a></li>
+								<li><a href="index.html#">Blog Type E</a>
+									<ul class="sub-menu">
+										<li><a href="blog_with_sidebarleft_type_e.html">Blog E - Left Sidebar</a></li>
+										<li><a href="blog_with_2sidebars_type_e.html">Blog E - 2 Sidebars</a></li>
+									</ul>
+								</li>
+								<li><a href="index.html#">Blog Single Post</a>
+									<ul class="sub-menu">
+										<li><a href="single_type_image.html">Single Post Image</a></li>
+										<li><a href="single_type_gallery.html">Single Post Gallery</a></li>
+										<li><a href="single_type_video.html">Single Post Video</a></li>
+										<li><a href="single_type_audio.html">Single Post Audio</a></li>
+										<li><a href="single_type_slideshow.html">Single Post Slideshow</a></li>
+										<li><a href="single_type_quote.html">Single Post Quote</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="index.html#">Shop</a>
+							<ul class="sub-menu">
+								
+								<li><a href="home_2.html">Home Shop 2</a></li>
+								<li><a href="home_3.html">Home Shop 3</a></li>
+								<li><a href="checkout.html">Checkout</a></li>
+								<li><a href="pricing.html">Pricing</a></li>
+								<li><a href="shopping_cart.html">Shopping Cart</a></li>
+								<li><a href="product.html">Product</a></li>
+							</ul>
+						</li>
+						<li><a href="contacts.html">Contact</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</nav>
+			</div> <!-- .container -->
+		</div> <!-- .header-bottom -->		
+	</div> <!-- #header -->	
+
+	<div class="container">
+
+	
+		
+	</div>
+
+
+
+
 
 </body>
 </html>
