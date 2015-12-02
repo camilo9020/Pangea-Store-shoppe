@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module PangeaStoreShoppe
   class Application < Rails::Application
+    config.assets.precompile += ["fontawesome/fontawesome-webfont.ttf",
+                               "fontawesome/fontawesome-webfont.eot",
+                               "fontawesome/fontawesome-webfont.svg",
+                               "fontawesome/fontawesome-webfont.woff"]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
