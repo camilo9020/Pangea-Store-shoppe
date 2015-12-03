@@ -790,7 +790,7 @@ margin-bottom:10px
 }
 
 .beta-list i {
-color:#f90;
+color:#acc86e;
 font-size:10px;
 padding-right:10px
 }
@@ -1025,7 +1025,7 @@ font-size:15px
 }
 
 a i {
-color:#f90;
+color:#acc86e;
 font-size:10px;
 padding-left:5px;
 padding-right:5px
@@ -1054,7 +1054,7 @@ display:inline-block
 }
 
 .bg-color4 {
-background-color:#f90
+background-color:#acc86e
 }
 
 .bg-color11 {
@@ -1325,7 +1325,7 @@ margin-bottom:7px
 
 .widget-main-body li:before {
 content:"\f054";
-color:#f90;
+color:#acc86e;
 font-family:"FontAwesome";
 padding-right:8px;
 font-size:10px
@@ -1479,7 +1479,7 @@ top:0;
 left:0;
 position:absolute;
 padding-top:1.5em;
-color:#f90
+color:#acc86e
 }
 
 .star-rating span:before {
@@ -1626,7 +1626,7 @@ margin-bottom:5px
 }
 
 .cart-item-amount span {
-color:#f90
+color:#acc86e
 }
 
 .cart-total {
@@ -1637,7 +1637,7 @@ line-height:50px
 }
 
 .cart-total-value {
-color:#f90
+color:#acc86e
 }
 
 .beta-tags {
@@ -1668,7 +1668,7 @@ height:auto
 
 .beta-sales-price {
 font-size:20px;
-color:#f90
+color:#acc86e
 }
 
 /* ==========================================================================
@@ -1733,7 +1733,7 @@ padding-left:7px
 }
 
 .tweet-body a {
-color:#f90
+color:#acc86e
 }
 
 .tweet-body a:hover {
@@ -1804,7 +1804,7 @@ color:#818992
 }
 
 .beta-promobox-b {
-background:#f90;
+background:#acc86e;
 color:#fff
 }
 
@@ -1907,7 +1907,7 @@ margin-right:10px
 }
 
 .flash-sale {
-color:#f90
+color:#acc86e
 }
 
 /* ==========================================================================
@@ -1957,7 +1957,7 @@ right:0
 }
 
 .ribbon.sale {
-background-color:#f90
+background-color:#acc86e
 }
 
 /* ==========================================================================
@@ -2082,7 +2082,7 @@ margin-bottom:5px
 .beta-blog-type {
 display:block;
 color:#fff;
-background:#f90;
+background:#acc86e;
 text-align:center;
 line-height:48px;
 width:48px;
@@ -2291,7 +2291,7 @@ font-size:10px
 }
 
 .beta-slides-quote .beta-arrow-left:hover i,.beta-slides-quote .beta-arrow-right:hover i {
-color:#f90
+color:#acc86e
 }
 
 /* ==========================================================================
@@ -2513,7 +2513,7 @@ left:0;
 width:35px;
 height:35px;
 display:block;
-background:#f90;
+background:#acc86e;
 text-align:center
 }
 
@@ -2623,7 +2623,7 @@ color:#999da0
 }
 
 .beta-author-social a:hover i {
-color:#f90
+color:#acc86e
 }
 
 .comment.depth-1 {
@@ -2950,7 +2950,7 @@ font-size:17px
 }
 
 table.beta-shopping-cart-table a.remove:hover i {
-color:#f90
+color:#acc86e
 }
 
 table.beta-shopping-cart-table td.actions .coupon .input-text {
@@ -3232,7 +3232,7 @@ background:#3a5c83
 .beta-btn.primary i {
 font-size:10px;
 padding-left:5px;
-color:#f90
+color:#acc86e
 }
 
 .beta-btn-white {
@@ -3676,7 +3676,7 @@ position:relative
 }
 
 .beta-pager-gallery a.active {
-border:2px solid #f90
+border:2px solid #acc86e
 }
 
 .beta-pager-gallery a img {
@@ -3945,7 +3945,7 @@ padding:45px 25px
 
 .beta-callout-box-b .pull-left {
 font-size:100px;
-color:#f90;
+color:#acc86e;
 float:none!important;
 text-align:center
 }
@@ -4244,7 +4244,7 @@ padding-left:35px
 
 .contact-info i {
 font-size:35px;
-color:#f90;
+color:#acc86e;
 position:absolute;
 top:0;
 left:0
@@ -4636,7 +4636,7 @@ color:#7b8fa3
 }
 #footer.color-div a {color:gray}
 #footer a:hover {
-color:#f90
+color:#acc86e
 }
 .color-div p{color:gray;}
 
@@ -4655,7 +4655,7 @@ margin-bottom:10px
 }
 
 #footer ul li i {
-color:#f90;
+color:#acc86e;
 margin-right:5px;
 font-size:10px
 }
@@ -4676,7 +4676,7 @@ padding:0 15px
 #footer.color-div button {border:1px solid gray;}
 
 #footer button:hover {
-color:#f90;
+color:#acc86e;
 -webkit-transition:all .2s ease-in-out;
 -moz-transition:all .2s ease-in-out;
 -o-transition:all .2s ease-in-out;
@@ -4687,7 +4687,7 @@ transition:all .2s ease-in-out
 #footer button i {
 margin-left:5px;
 font-size:10px;
-color:#f90
+color:#acc86e
 }
 
 
@@ -4816,7 +4816,7 @@ margin-top: 11%;}
 
 
 
-.icon-box-e:hover i{color:#f90;
+.icon-box-e:hover i{color:#acc86e;
 -moz-transition: all 0.8s ease-out;
 -o-transition: all 0.8s ease-out;
 -ms-transition: all 0.8s ease-out;
@@ -4826,7 +4826,7 @@ transition: all 0.8s ease-out;}
 -o-transition: all 0.10s ease-out;
 -ms-transition: all 0.10s ease-out;
 transition: all 0.10s ease-out;}
-.icon-box-b:hover i{color:#f90;
+.icon-box-b:hover i{color:#acc86e;
 -moz-transition: all 0.8s ease-out;
 -o-transition: all 0.8s ease-out;
 -ms-transition: all 0.8s ease-out;
@@ -4836,7 +4836,7 @@ transition: all 0.8s ease-out;}
 -o-transition: all 0.10s ease-out;
 -ms-transition: all 0.10s ease-out;
 transition: all 0.10s ease-out;}
-.icon-box-c:hover i{color:#f90;
+.icon-box-c:hover i{color:#acc86e;
 -moz-transition: all 0.8s ease-out;
 -o-transition: all 0.8s ease-out;
 -ms-transition: all 0.8s ease-out;
@@ -4846,7 +4846,7 @@ transition: all 0.8s ease-out;}
 -o-transition: all 0.10s ease-out;
 -ms-transition: all 0.10s ease-out;
 transition: all 0.10s ease-out;}
-.icon-box-a:hover i{color:#f90;
+.icon-box-a:hover i{color:#acc86e;
 -moz-transition: all 0.8s ease-out;
 -o-transition: all 0.8s ease-out;
 -ms-transition: all 0.8s ease-out;
@@ -4856,7 +4856,7 @@ transition: all 0.8s ease-out;}
 -o-transition: all 0.10s ease-out;
 -ms-transition: all 0.10s ease-out;
 transition: all 0.10s ease-out;}
-.ratio-1x1:hover i{color:#f90;
+.ratio-1x1:hover i{color:#acc86e;
 -moz-transition: all 0.8s ease-out;
 -o-transition: all 0.8s ease-out;
 -ms-transition: all 0.8s ease-out;
@@ -5025,12 +5025,12 @@ left: 35%;}
 
 .nivo-prevNav:hover{
     background-image: url('../images/nivo-left-hover.png');
-	background-color:#f90;
+	background-color:#acc86e;
 }
 
 .nivo-nextNav:hover{
     background-image: url('../images/nivo-right-hover.png');
-	background-color:#f90;
+	background-color:#acc86e;
 }
 .nivoSlider{
     position: relative;  
@@ -5092,7 +5092,7 @@ box-shadow:         0px 0px 20px 0px rgba(0, 0, 0, 0.12);}
 
 .single-item-header{position:relative; overflow:hidden;}
 .ribbon{z-index:999;}
-.single-item:hover a.add-to-cart{background: #f90;}
+.single-item:hover a.add-to-cart{background: #acc86e;}
 .single-item:hover img{-webkit-transform: scale(1.3, 1.3) ;
 transform: scale(1.3, 1.3) ;}
 
