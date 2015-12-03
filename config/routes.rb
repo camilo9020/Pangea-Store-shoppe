@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
-  root to: "products#index"
+  root to: "pages#home"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
