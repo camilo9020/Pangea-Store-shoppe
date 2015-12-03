@@ -170,7 +170,7 @@
                         </div>
                         <div class="single-item-caption">
                            <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                           <%= link_to  "Details <i class='fa fa-chevron-right'></i>".html_safe, product_path(product.permalink) %>
+                           <%= link_to  "Details <i class='fa fa-chevron-right'></i>".html_safe, product_path(product.permalink), class: "beta-btn primary"  %>
                            <div class="clearfix"></div>
                         </div>
                         <% if (index + 1) % 3 == 0  %>
@@ -468,42 +468,12 @@
                <h3 class="widget-title">Categorias</h3>
                <div class="widget-body">
                   <ul class="list-unstyled">
+                     <% @products.each do |category, products| %>
                      <li>
-                        <input type="checkbox" name="colors" id="colors-beige" value="beige">
-                        <label for="colors-beige"><span></span> Beige <span>(35)</span></label>
+                        <input type="checkbox" name="colors" id="colors-<%= category.name %>" value="<%= category.name %>">
+                        <label for="colors-<%= category.name %>"><span></span> <%= category.name %> <span>(<%= category.products.count %>)</span></label>
                      </li>
-                     <li>
-                        <input type="checkbox" name="colors" id="colors-blue" value="blue">
-                        <label for="colors-blue"><span></span> Blue <span>(256)</span></label>
-                     </li>
-                     <li>
-                        <input type="checkbox" name="colors" id="colors-cream" value="cream">
-                        <label for="colors-cream"><span></span> Cream <span>(15)</span></label>
-                     </li>
-                     <li>
-                        <input type="checkbox" name="colors" id="colors-green" value="green">
-                        <label for="colors-green"><span></span> Green <span>(85)</span></label>
-                     </li>
-                     <li>
-                        <input type="checkbox" name="colors" id="colors-multi" value="multi">
-                        <label for="colors-multi"><span></span> Multi <span>(99)</span></label>
-                     </li>
-                     <li>
-                        <input type="checkbox" name="colors" id="colors-orange" value="orange">
-                        <label for="colors-orange"><span></span> Orange <span>(358)</span></label>
-                     </li>
-                     <li>
-                        <input type="checkbox" name="colors" id="colors-purple" value="purple">
-                        <label for="colors-purple"><span></span> Purple <span>(74)</span></label>
-                     </li>
-                     <li>
-                        <input type="checkbox" name="colors" id="colors-silver" value="silver">
-                        <label for="colors-silver"><span></span> Silver <span>(33)</span></label>
-                     </li>
-                     <li>
-                        <input type="checkbox" name="colors" id="colors-white" value="white">
-                        <label for="colors-white"><span></span> White <span>(789)</span></label>
-                     </li>
+                     <% end %>                    
                   </ul>
                </div>
             </div>
