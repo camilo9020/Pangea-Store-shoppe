@@ -152,15 +152,15 @@
                   </p>
                   <div class="clearfix"></div>
                </div>
-
                <div class="row">
-
                   <% @products.each do |category, products| %>
-                  <% products.each do |product| %>
+                  <% products.each_with_index do |product, index| %>
                   <div class="col-sm-4 wow fadeInDown">
                      <div class="single-item">
                         <div class="single-item-header">
-                           <a href="product.html"><img src="../../assets/logo_pangea_2.png" alt=""></a>
+                           <% if product.default_image %>
+                             <%= image_tag product.default_image.path, :size => "262x311" %>
+                           <% end %> 
                         </div>
                         <div class="single-item-body">
                            <p class="single-item-title"><%= product.name %></p>
@@ -170,16 +170,16 @@
                         </div>
                         <div class="single-item-caption">
                            <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                           <%= link_to  "Details <i class='fa fa-chevron-right'></i>".html, product_path(product.permalink) %>
-                          
+                           <%= link_to  "Details <i class='fa fa-chevron-right'></i>".html_safe, product_path(product.permalink) %>
                            <div class="clearfix"></div>
                         </div>
+                        <% if (index + 1) % 3 == 0  %>
+                           <div class="space50">&nbsp;</div>
+                        <% end %>
                      </div>
                   </div>
-                     <% end %>
                   <% end %>
-
-                                          
+                  <% end %>                                          
                </div>
             </div>
             <!-- .beta-products-list -->
