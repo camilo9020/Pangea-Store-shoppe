@@ -494,34 +494,19 @@
                <h3 class="widget-title">Mas vendidos</h3>
                <div class="widget-body">
                   <div class="beta-sales beta-lists">
-                     <div class="media beta-sales-item">
-                        <a class="pull-left" href="product.html"><img src="../../assets/products/sales/1.png" alt=""></a>
+                  <% @bestSellers.each do |product| %>
+                     <div class="media beta-sales-item">                        
+                        <% if product.default_image %>
+                          <%= link_to product_path(product.permalink), class:"pull-left"  do %>
+                             <% image_tag product.default_image.path, :size => "55x58" %>
+                          <% end %>                               
+                        <% end %>                         
                         <div class="media-body">
-                           Sample Woman Top
-                           <span class="beta-sales-price">$34.55</span>
+                           <%= product.name %>
+                           <span class="beta-sales-price"><%= number_to_currency product.price %></span>
                         </div>
                      </div>
-                     <div class="media beta-sales-item">
-                        <a class="pull-left" href="product.html"><img src="../../assets/products/sales/2.png" alt=""></a>
-                        <div class="media-body">
-                           Sample Woman Top
-                           <span class="beta-sales-price">$34.55</span>
-                        </div>
-                     </div>
-                     <div class="media beta-sales-item">
-                        <a class="pull-left" href="product.html"><img src="../../assets/products/sales/3.png" alt=""></a>
-                        <div class="media-body">
-                           Sample Woman Top
-                           <span class="beta-sales-price">$34.55</span>
-                        </div>
-                     </div>
-                     <div class="media beta-sales-item">
-                        <a class="pull-left" href="product.html"><img src="../../assets/products/sales/4.png" alt=""></a>
-                        <div class="media-body">
-                           Sample Woman Top
-                           <span class="beta-sales-price">$34.55</span>
-                        </div>
-                     </div>
+                  <% end %>
                   </div>
                </div>
             </div>
