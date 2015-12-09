@@ -169,7 +169,7 @@
                         </div>
                         <div class="single-item-caption">
                            <%  if product.orderable? %>
-                             <%= link_to "<i class='fa fa-shopping-cart'></i>".html_safe, product_path(product.permalink), :method => :post, class: "add-to-cart pull-left"  %>
+                             <%= link_to "<i class='fa fa-shopping-cart'></i>".html_safe, buy_product_path(product.product_category.permalink, product.permalink), :method => :post, class: "add add-to-cart pull-left"  %>
                            <% end %>
                            <%= link_to "Details <i class='fa fa-chevron-right'></i>".html_safe, product_path(product.permalink), class: "beta-btn primary"  %>
                            <div class="clearfix"></div>

@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   get "basket", to: "orders#show"
   
   
-  
+  post 'products/:category_id/:product_id/buy' => 'products#add_to_basket', :as => 'buy_product'
   delete 'basket/delete/:order_item_id' => 'orders#remove_item', :as => 'remove_basket_item'
+  
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
