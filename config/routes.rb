@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   get 'pages/home'
+  get 'pages/about'
+  get 'pages/portafolio'
+  get 'pages/contacto'
+  get 'pages/blog'
 
   mount Shoppe::Engine => "/shoppe"
   # The priority is based upon order of creation: first created -> highest priority.
