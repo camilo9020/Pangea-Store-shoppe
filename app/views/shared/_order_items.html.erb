@@ -1,0 +1,18 @@
+ <div class="cart-items">
+     <% order.order_items.each do |item| %>
+      <div class="cart-item">
+         <a class="cart-item-edit" href="index.html#"><i class="fa fa-pencil"></i></a>       
+         <%= link_to "<i class='fa fa-times'></i>".html_safe, remove_basket_item_path(item), :method => :delete, :class => 'cart-item-delete delete ajax' %>
+         <div class="media">            
+            <%= link_to product_path(item.ordered_item.permalink), class:"pull-left"  do %>
+               <% image_tag item.ordered_item.default_image.path, :size => "50x50S" %>
+            <% end %> 
+            <div class="media-body">
+               <span class="cart-item-title"><%= item.ordered_item.full_name %></span>
+               <span class="cart-item-options"></span>
+               <span class="cart-item-amount"><%= item.quantity %>*<span><%= number_to_currency item.unit_price %></span></span>
+            </div>
+         </div>
+      </div>
+      <% end %>
+</div>

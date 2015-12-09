@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
   root to: "pages#home"
+  get "basket", to: "orders#show"
+  
+  
+  
+  delete 'basket/delete/:order_item_id' => 'orders#remove_item', :as => 'remove_basket_item'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
