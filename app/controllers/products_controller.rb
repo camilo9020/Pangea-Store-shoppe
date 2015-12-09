@@ -11,8 +11,9 @@ class ProductsController < ApplicationController
   end
   
   def index
-    @products = @product_category.products.includes(:product_categories, :variants).root.active
-  end
+	  @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
+	  @products = @products.group_by(&:product_category)
+	end
   
   def filter
     @products = Shoppe::Product.active.with_attributes(params[:key].to_s, params[:value].to_s)
