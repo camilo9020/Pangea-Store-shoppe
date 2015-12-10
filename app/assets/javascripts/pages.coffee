@@ -3,8 +3,7 @@
 
 $ ->
 
-  updateOrderItemsFromRemote = (data)->  
-    console.log(data)  
+  updateOrderItemsFromRemote = (data)-> 
     if data.status == 'complete'      
       if data.redirect?
         window.location.replace(data.redirect)
