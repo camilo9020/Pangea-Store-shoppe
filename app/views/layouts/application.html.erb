@@ -86,7 +86,7 @@
                         <li><%= link_to category.name, products_path(category.permalink)  %>
                           <ul class="sub-menu">
                            <% subcategories(category.id).each do |subcategory| %>
-                            <li><%= link_to subcategory.name, products_path(subcategory.permalink)  %></li>
+                            <li><%= link_to subcategory.name, products_sub_path(category.permalink,subcategory.permalink)  %></li>
                           <% end %>
                           </ul>
                         </li>

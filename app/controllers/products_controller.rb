@@ -14,6 +14,11 @@ class ProductsController < ApplicationController
 	  @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
 	  @products = @products.group_by(&:product_category)
     
+    if params[:category_id]
+     @products = @product.where(:category_id => params[:category_id])
+    end
+    
+    
 	end
   
   def filter
