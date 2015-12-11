@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  include ApplicationHelper 
 
   before_filter do
     if params[:category_id]
@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
   
   def show
     @product = Shoppe::Product.root.find_by_permalink(params[:permalink])
+    @bestSellers = bestSellers
   end
    
   def add_to_basket
