@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
+  get 'products/:category_id' => 'products#index', :as => 'products'
   root to: "pages#home"
   get "basket", to: "orders#show"
   

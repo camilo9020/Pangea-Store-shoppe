@@ -82,52 +82,16 @@
                            <li><a href="../pages/portafolio">Portafolio</a></li>
                         </ul>
                      </li>
-
-                     <li> 
-                        <a href="index.html#">Alimentación</a>
-                        <ul class="sub-menu">
-                           <li><a href="portfolio_type_a.html">Portfolio type A</a></li>
-                           <li>
-                              <a href="index.html#">Portfolio type B</a>
-                              <ul class="sub-menu">
-                                 <li><a href="portfolio_3col.html">Portfolio B - 3 Columns</a></li>
-                                 <li><a href="portfolio_4col.html">Portfolio B - 4 Columns</a></li>
-                              </ul>
-                           </li>
-                           <li><a href="portfolio_single.html">Portfolio Item</a></li>
-                        </ul>
-                     </li>
-
-                     <li> 
-                        <a href="index.html#">Bebidas</a>
-                        <ul class="sub-menu">
-                           <li><a href="portfolio_type_a.html">Portfolio type A</a></li>
-                           <li>
-                              <a href="index.html#">Portfolio type B</a>
-                              <ul class="sub-menu">
-                                 <li><a href="portfolio_3col.html">Portfolio B - 3 Columns</a></li>
-                                 <li><a href="portfolio_4col.html">Portfolio B - 4 Columns</a></li>
-                              </ul>
-                           </li>
-                           <li><a href="portfolio_single.html">Portfolio Item</a></li>
-                        </ul>
-                     </li>
-
-                     <li> 
-                        <a href="index.html#">Reposteria</a>
-                        <ul class="sub-menu">
-                           <li><a href="portfolio_type_a.html">Portfolio type A</a></li>
-                           <li>
-                              <a href="index.html#">Portfolio type B</a>
-                              <ul class="sub-menu">
-                                 <li><a href="portfolio_3col.html">Portfolio B - 3 Columns</a></li>
-                                 <li><a href="portfolio_4col.html">Portfolio B - 4 Columns</a></li>
-                              </ul>
-                           </li>
-                           <li><a href="portfolio_single.html">Portfolio Item</a></li>
-                        </ul>
-                     </li>
-                    
+                     <% parent_categories.each do |category| %>
+                        <li><%= link_to category.name, products_path(category.permalink)  %>
+                          <ul class="sub-menu">
+                           <% subcategories(category.id).each do |subcategory| %>
+                            <li><%= link_to subcategory.name, products_path(subcategory.permalink)  %></li>
+                          <% end %>
+                          </ul>
+                        </li>
+                     <% end %>
+                  
                      <li>
                         <a href="../pages/blog">Blog</a>                       
                      </li>

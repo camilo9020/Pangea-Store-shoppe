@@ -3,7 +3,17 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
+  
+  
   private
+  
+  def parent_categories  
+	  @categories = Shoppe::ProductCategory.where(:depth => 0)
+	end
+  
+  def subcategories(parent_id)
+    @subcategories = Shoppe::ProductCategory.where(:parent_id => parent_id)
+  end
 
   def current_order
     @current_order ||= begin
@@ -24,6 +34,6 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  helper_method :current_order, :has_order?
+  helper_method :current_order, :has_order? , :parent_categories , :subcategories
   
 end
