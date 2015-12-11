@@ -18,10 +18,9 @@
 						</div>
 
 						<div class="woocommerce-product-rating" >
-							<div class="star-rating" title="Rated 4.00 out of 5"> 
-								<span style="width:80%"> <strong itemprop="ratingValue" class="rating">4.00</strong> out of 5 </span>
-							</div> 
-							<span class="color-gray">(14)</span>
+							
+							<span class="color-gray">Stock (<%= @product.stock %>)</span>
+							
 						</div>
 
 						<div class="clearfix"></div>
@@ -57,9 +56,11 @@
 								<option value="3">3</option>
 								<option value="4">4</option>
 								<option value="5">5</option>
-							</select>
-							<a class="add-to-cart" href="product.html#"><i class="fa fa-shopping-cart"></i></a>
-							<div class="clearfix"></div>
+							</select>							
+							<div class="single-item-caption">  
+							     <%= link_to "<i class='fa fa-shopping-cart'></i>".html_safe, buy_product_path(@product.product_category.permalink, @product.permalink), :method => :post, class: "add add-to-cart pull-left"  %>
+							   <div class="clearfix"></div>	
+						    </div>	
 						</div>
 					</div>
 				</div>
@@ -145,41 +146,31 @@
 				</div> <!-- .beta-products-list -->
 			</div>
 			<div class="col-sm-3 aside">
+				
+
 				<div class="widget">
-					<h3 class="widget-title">Best Sellers</h3>
-					<div class="widget-body">
-						<div class="beta-sales beta-lists">
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/1.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/2.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/3.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/4.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> <!-- best sellers widget -->
+				   <h3 class="widget-title">Mas vendidos</h3>
+				   <div class="widget-body">
+				      <div class="beta-sales beta-lists">
+				      <% @bestSellers.each do |product| %>
+				         <div class="media beta-sales-item">                        
+				            <% if product.default_image %>
+				              <%= link_to product_path(product.permalink), class:"pull-left"  do %>
+				                 <% image_tag product.default_image.path, :size => "55x58" %>
+				              <% end %>                               
+				            <% end %>                         
+				            <div class="media-body">
+				               <%= product.name %>
+				               <span class="beta-sales-price"><%= number_to_currency product.price %></span>
+				            </div>
+				         </div>
+				      <% end %>
+				      </div>
+				   </div>
+				</div>
+				<!-- best sellers widget -->
+
+
 
 				<div class="widget">
 					<h3 class="widget-title">Twitter Feeds</h3>
