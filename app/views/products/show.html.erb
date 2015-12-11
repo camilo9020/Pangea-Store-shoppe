@@ -18,10 +18,9 @@
 						</div>
 
 						<div class="woocommerce-product-rating" >
-							<div class="star-rating" title="Rated 4.00 out of 5"> 
-								<span style="width:80%"> <strong itemprop="ratingValue" class="rating">4.00</strong> out of 5 </span>
-							</div> 
-							<span class="color-gray">(14)</span>
+							
+							<span class="color-gray">Stock (<%= @product.stock %>)</span>
+							
 						</div>
 
 						<div class="clearfix"></div>
@@ -57,9 +56,11 @@
 								<option value="3">3</option>
 								<option value="4">4</option>
 								<option value="5">5</option>
-							</select>
-							<a class="add-to-cart" href="product.html#"><i class="fa fa-shopping-cart"></i></a>
-							<div class="clearfix"></div>
+							</select>							
+							<div class="single-item-caption">  
+							     <%= link_to "<i class='fa fa-shopping-cart'></i>".html_safe, buy_product_path(@product.product_category.permalink, @product.permalink), :method => :post, class: "add add-to-cart pull-left"  %>
+							   <div class="clearfix"></div>	
+						    </div>	
 						</div>
 					</div>
 				</div>
