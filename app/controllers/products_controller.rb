@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   
   def index
 	  @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
+
 	  @products = @products.group_by(&:product_category)
     
     if params[:category_id]
@@ -19,6 +20,7 @@ class ProductsController < ApplicationController
     end
     
     
+
 	end
   
   def filter
@@ -32,6 +34,7 @@ class ProductsController < ApplicationController
   def show
     @product = Shoppe::Product.root.find_by_permalink(params[:permalink])
     @bestSellers = bestSellers
+    @products_related=  products_related
   end
    
   def add_to_basket
