@@ -2,15 +2,12 @@ module ApplicationHelper
 	def bestSellers
 	Shoppe::Product.root.ordered.includes(:product_categories, :variants)[0,4]
 	end
-<<<<<<< HEAD
+
 
 	def products_related
 		Shoppe::Product.root.ordered.includes(:product_categories, :variants)[0,3]
 	end
 
-
-
-=======
 	
 	def belongs_permalink(permalink,category_id,subcategory_id)
     if subcategory_id
@@ -24,5 +21,5 @@ module ApplicationHelper
       permalink==category_id || permalink==subcategory_id || permalink_parent==category_id    
     end     
   end
->>>>>>> carrito
+
 end
