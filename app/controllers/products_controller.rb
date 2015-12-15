@@ -13,12 +13,7 @@ class ProductsController < ApplicationController
   def index
 	  @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
 	  @products = @products.group_by(&:product_category)
-    
-    if params[:category_id]
-     @products = @product.where(:category_id => params[:category_id])
-    end
-    
-    
+    @products = @products.select { |k,v| belongs_permalink(k.permalink,params[:category_id],params[:subcategory_id])}     
 	end
   
   def filter
