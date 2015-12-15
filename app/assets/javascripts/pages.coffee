@@ -26,6 +26,5 @@ $ ->
 
   $('body').on 'click', 'div.cart-item a.ajax, .add-to-cart', -> ajaxLink.call(this, updateOrderItemsFromRemote)
   $('body').on 'click', 'a.verMas' , ->
-      $('div.hideProduct#'+$(this)[0].id).toggleClass('hideProduct')
-      console.log($(this)[0].id)
+      $('div.hideProduct#'+$(this)[0].id).toggleClass('hideProduct')      
      
