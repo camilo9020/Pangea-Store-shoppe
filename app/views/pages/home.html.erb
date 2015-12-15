@@ -30,13 +30,13 @@
                               </p>
                            </div>
                            <div class="single-item-caption">
-                              <%  if product.orderable? %>
+                              <%  if product.orderable? && product.stock>0 %>
                                 <%= link_to "<i class='fa fa-shopping-cart'></i>".html_safe, buy_product_path(product.product_category.permalink, product.permalink), :method => :post, class: "add add-to-cart pull-left"  %>
                               <% end %>
                               <%= link_to "Detalle <i class='fa fa-chevron-right'></i>".html_safe, product_path(product.permalink), class: "beta-btn primary"  %>
                               <div class="clearfix"></div>
                            </div>
-                           <% if (index + 1) % 3 == 0  %>
+                           <% if (index + 1) % 3 == 0  || (index + 1) == category.products.count %>
                               <div class="space50">&nbsp;</div>
                            <% end %>
                         </div>
