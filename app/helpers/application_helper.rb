@@ -21,5 +21,17 @@ module ApplicationHelper
       permalink==category_id || permalink==subcategory_id || permalink_parent==category_id    
     end     
   end
+<<<<<<< HEAD
 
+=======
+  
+  def parent_category(category)
+    if category.parent_id
+       parent_category(Shoppe::ProductCategory.ordered.where(:id => category.parent_id).first!)
+    else
+        category
+    end
+  end
+  
+>>>>>>> carrito
 end
