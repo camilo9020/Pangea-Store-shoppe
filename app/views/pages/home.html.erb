@@ -9,13 +9,13 @@
                <% @products.each do |category, products| %>
                <h4><%= category.name %></h4>
                <div class="beta-products-details">
-                  <p class="pull-left"><%= category.products.count %> productos | <a href="index.html#">Ver mas</a></p>                  
+                  <p class="pull-left"><%= products.count %> productos | <a class="verMas" id="category-<%= category.permalink %>">Ver más</a></p>                  
                   <div class="clearfix"></div>
                </div>
                <div class="row">  
                   <% products.each_with_index do |product, index| %>
                   
-                     <% if index < 3 %>
+                     <div class="<% if index + 1 > 3 %>hideProduct<% end %>" id="category-<%= category.permalink %>">
                      <div class="col-sm-4 wow fadeInDown">
                         <div class="single-item">
                            <div class="single-item-header">
@@ -36,12 +36,12 @@
                               <%= link_to "Details <i class='fa fa-chevron-right'></i>".html_safe, product_path(product.permalink), class: "beta-btn primary"  %>
                               <div class="clearfix"></div>
                            </div>
-                           <% if (index + 1) % 3 == 0  || (index + 1) == category.products.count %>
+                           <% if (index + 1) % 3 == 0  || (index + 1) == products.count %>
                               <div class="space50">&nbsp;</div>
                            <% end %>
                         </div>
                      </div>
-                     <% end %>
+                     </div>
                   <% end %>                                                        
                </div>
                <% end %>

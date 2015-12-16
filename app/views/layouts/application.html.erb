@@ -44,7 +44,7 @@
          <div class="header-body">
             <div class="container beta-relative">
                <div class="pull-left">
-                  <a href="/" id="logo"><img src="../../assets/logo_pangea_2.png" alt=""></a>
+                  <%= link_to '<img src="../../assets/logo_pangea_2.png" alt="">'.html_safe , home_path , :id => "logo"  %>
                   <span class="slogan">Una forma de pensar, vivir y comer Saludable</span>
                </div>
                <div class="pull-right beta-components space-left ov">
@@ -76,10 +76,10 @@
                <nav class="main-menu">
                   <ul class="l-inline ov">
                      <li>
-                        <a href="index.html">Home</a>
+                        <%= link_to "Home", home_path  %>
                         <ul class="sub-menu">
-                           <li><a href="../pages/about">Acerca de Nosotros</a></li>
-                           <li><a href="../pages/portafolio">Portafolio</a></li>
+                           <li><%= link_to "Acerca de Nosotros", about_path  %></li>
+                           <li><%= link_to "Portafolio", portafolio_path  %></li>
                         </ul>
                      </li>
                      <% parent_categories.each do |category| %>
@@ -93,10 +93,10 @@
                      <% end %>
                   
                      <li>
-                        <a href="../pages/blog">Blog</a>                       
+                        <%= link_to "Blog", blog_path  %>                      
                      </li>
                      
-                     <li><a href="../pages/contacto">Contactanos</a></li>
+                     <li><%= link_to "Contactanos", contacto_path  %></li>
                   </ul>
                   <div class="clearfix"></div>
                </nav>
