@@ -21,9 +21,6 @@ module ApplicationHelper
       permalink==category_id || permalink==subcategory_id || permalink_parent==category_id    
     end     
   end
-<<<<<<< HEAD
-
-=======
   
   def parent_category(category)
     if category.parent_id
@@ -33,5 +30,5 @@ module ApplicationHelper
     end
   end
   
->>>>>>> carrito
+
 end
