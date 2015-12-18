@@ -4,9 +4,11 @@
 $ ->
 
   updateOrderItemsFromRemote = (data)-> 
+    
     if data.status == 'complete'      
-      if data.redirect?
-        window.location.replace(data.redirect)
+      if data.redirect?        
+        $('div.cart-item').replaceWith('')
+        $('span.cart-total-value').html('$0.00'); 
       else if data.items?        
         $('div.cart-body-elements').replaceWith(data.items)
     else if data.status == 'error'
