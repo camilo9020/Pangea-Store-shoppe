@@ -21,10 +21,13 @@ class OrdersController < ApplicationController
         wants.html { redirect_to request.referer, :notice => "Item has been removed from your basket successfully"}
         wants.json do
           current_order.reload
-          render :json => {:status => 'complete', :items => render_to_string(:partial => 'shared/order_items.html', :locals => {:order => current_order})}
+          render :json => {:status => 'complete', :items => render_to_string(:partial => 'shared/order_items.html', :locals => {:order => current_order}) , :items_checkout => render_to_string(:partial => 'orders/items.html', :locals => {:order => current_order}) }          
         end
       end
     end
+  end
+  def checkout
+     @order = Shoppe::Order.find(current_order.id)
   end
   
 end

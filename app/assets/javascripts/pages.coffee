@@ -5,12 +5,17 @@ $ ->
 
   updateOrderItemsFromRemote = (data)-> 
     
-    if data.status == 'complete'      
-      if data.redirect?        
-        $('div.cart-item').replaceWith('')
+    if data.status == 'complete'
+      console.log(data)  
+      if data.items == undefined         
+        $('div.cart-item').replaceWith('');
+        $('div.checkout-order-items').replaceWith('');   
+        $('div.checkout_delivery_service').replaceWith(''); 
+        $('div.checkout-total-value').html('$0.00');      
         $('span.cart-total-value').html('$0.00'); 
       else if data.items?        
         $('div.cart-body-elements').replaceWith(data.items)
+        $('div.your-order').replaceWith(data.items_checkout)
     else if data.status == 'error'
       alert data.message
     
