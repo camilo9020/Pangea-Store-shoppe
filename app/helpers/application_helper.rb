@@ -30,10 +30,6 @@ module ApplicationHelper
     end
   end
   
-<<<<<<< HEAD
-
-end
-=======
   def search(products,params)
      search_input = "%#{params[:search].gsub(/\s/,'%')}%"
      products.joins('LEFT OUTER JOIN "shoppe_product_category_translations" ON "shoppe_product_category_translations"."id" = "shoppe_product_categories"."id" 
@@ -45,6 +41,5 @@ end
       "shoppe_product_category_translations_parent"."name" LIKE ?',search_input,search_input,search_input,search_input,search_input)
 
   end
-  
+
 end
->>>>>>> carrito
