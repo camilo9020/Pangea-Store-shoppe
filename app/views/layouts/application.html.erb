@@ -49,11 +49,11 @@
                </div>
                <div class="pull-right beta-components space-left ov">
                   <div class="space10">&nbsp;</div>
-                  <div class="beta-comp">
-                     <form role="search" method="get" id="searchform" action="http://webredox.net/">
-                        <input type="text" value="" name="s" id="s" placeholder="Search entire store here..." />
-                        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-                     </form>
+                  <div class="beta-comp">                   
+                     <%= form_tag home_path, :method => 'get', :id => "searchform" do %>  
+                        <%= text_field_tag :search, params[:search], :placeholder => "Search entire store here...", :id => "s" %> 
+                        <%= button_tag "", :class => "fa fa-search" , :id => "searchsubmit", :name => nil %>
+                     <% end %>                              
                   </div>
                   <div class="beta-comp">
                      <div class="cart">
