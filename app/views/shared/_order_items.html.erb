@@ -6,7 +6,7 @@
          <%= link_to "<i class='fa fa-times'></i>".html_safe, remove_basket_item_path(item), :method => :delete, :class => 'cart-item-delete delete ajax' %>
          <div class="media">
             <%= link_to product_path(item.ordered_item.permalink), class:"pull-left"  do %>
-            <% image_tag item.ordered_item.default_image.path, :size => "50x50S" %>
+            <% image_tag item.ordered_item.default_image.path, :size => "50x50" %>
             <% end %> 
             <div class="media-body">
                <span class="cart-item-title"><%= item.ordered_item.full_name %></span>
@@ -18,11 +18,12 @@
       <% end %>
    </div>
    <div class="cart-caption">
-      <div class="cart-total text-right">Subtotal: <span class="cart-total-value"><%= number_to_currency order.total_before_tax %></span></div>
+      <div class="cart-total text-right">Total: <span class="cart-total-value"><%= number_to_currency order.total %></span></div>
       <div class="clearfix"></div>
       <div class="center">
          <div class="space10">&nbsp;</div>
-         <a href="checkout.html" class="beta-btn primary text-center">Checkout <i class="fa fa-chevron-right"></i></a>
+         <%= link_to 'Checkout <i class="fa fa-chevron-right"></i>'.html_safe , checkout_path , :class => "beta-btn primary text-center" %>
+         
       </div>
    </div>
 </div>

@@ -1,0 +1,96 @@
+<div class="your-order">
+   <div class="your-order-head">
+      <h5>Your Order</h5>
+   </div>
+   <div class="your-order-body">
+      <div class='checkout-order-items'>
+      <% order.order_items.each do |item| %>
+      <div class='order-item'>
+         <div class="your-order-item">
+            <div class="pull-left">
+               <div class="media">
+                  <%= link_to product_path(item.ordered_item.permalink), class:"pull-left"  do %>
+                  <% image_tag item.ordered_item.default_image.path, :size => "80x80" %>
+                  <% end %>             
+                  <div class="media-body">
+                     <p class="font-large"><%= item.ordered_item.full_name %></p>
+                     <span class="color-gray your-order-info">Color: Red</span>
+                     <span class="color-gray your-order-info">Size: M</span>
+                     <span class="color-gray your-order-info">Qty: <%= item.quantity %></span>
+                  </div>
+               </div>
+            </div>
+            <div class="pull-right">
+               <h5 class="color-gray"><%= number_to_currency item.sub_total %></h5>
+            </div>
+            <div class="clearfix"></div>
+         </div>
+         <div class="your-order-item pbn">
+            <div class="pull-left">
+               <p class="your-order-f18">Subtotal:</p>               
+               <p class="your-order-f18">Tax:</p>               
+               <p class="your-order-f18">Total:</p>               
+            </div>
+            <div class="pull-right">
+               <h5 class="color-gray text-right"><%= number_to_currency item.sub_total %></h5>               
+               <h5 class="color-gray text-right"><%= number_to_currency item.tax_amount %></h5>               
+               <h5 class="color-gray text-right"><%= number_to_currency item.total %></h5>               
+            </div>
+            <div class="clearfix"></div>
+         </div>
+      </div>
+      <% end %>
+      </div>
+      <div class="checkout_delivery_service">
+      <% if order.delivery_service %>
+      <div class="your-order-item">
+         <div class="pull-left">
+            <p class="your-order-f18">Delivery Service:</p>
+         </div>
+         <div class="pull-right">
+            <h5 class="color-gray"><%= number_to_currency order.delivery_price + order.delivery_tax_amount %></h5>
+         </div>
+         <div class="clearfix"></div>
+      </div>
+      <% end %>
+      </div>
+      <div class="your-order-item">
+         <div class="pull-left">
+            <p class="your-order-f18">Total:</p>
+         </div>
+         <div class="pull-right">
+            <h5 class="color-black"><div class="checkout-total-value"><%= number_to_currency order.total %></div></h5>
+         </div>
+         <div class="clearfix"></div>
+      </div>
+   </div>
+   <div class="your-order-head">
+      <h5>Payment Method</h5>
+   </div>
+   <div class="your-order-body">
+      <ul class="payment_methods methods">
+         <li class="payment_method_bacs">
+            <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked" data-order_button_text="">
+            <label for="payment_method_bacs">Direct Bank Transfer </label>
+            <div class="payment_box payment_method_bacs" style="display: block;">
+               Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.
+            </div>
+         </li>
+         <li class="payment_method_cheque">
+            <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="cheque" data-order_button_text="">
+            <label for="payment_method_cheque">Cheque Payment </label>
+            <div class="payment_box payment_method_cheque" style="display: none;">
+               Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.
+            </div>
+         </li>
+         <li class="payment_method_paypal">
+            <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal" data-order_button_text="Proceed to PayPal">
+            <label for="payment_method_paypal">PayPal</label>
+            <div class="payment_box payment_method_paypal" style="display: none;">
+               Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account
+            </div>
+         </li>
+      </ul>
+   </div>
+   <div class="text-center"><a class="beta-btn primary" href="checkout.html#">Checkout <i class="fa fa-chevron-right"></i></a></div>
+</div>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'pages/portafolio', :as => 'portafolio'
   get 'pages/contacto', :as => 'contacto'
   get 'pages/blog', :as => 'blog'
+  match "checkout", to: "orders#checkout", as: "checkout", via: [:get, :patch]
 
   mount Shoppe::Engine => "/shoppe"
   # The priority is based upon order of creation: first created -> highest priority.
