@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
   def show
     @product = Shoppe::Product.root.find_by_permalink(params[:permalink])
     @bestSellers = bestSellers
+    @attributes = @product.product_attributes.public.to_a
   end
    
   def add_to_basket
