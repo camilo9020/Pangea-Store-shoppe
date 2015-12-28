@@ -12,8 +12,10 @@ class ProductsController < ApplicationController
   
   def index
 	  @products = Shoppe::Product.root.ordered.includes(:product_categories, :variants)
+
 	  @products = @products.group_by(&:product_category)
     @products = @products.select { |k,v| belongs_permalink(k.permalink,params[:category_id],params[:subcategory_id])}     
+
 	end
   
   def filter
@@ -27,6 +29,7 @@ class ProductsController < ApplicationController
   def show
     @product = Shoppe::Product.root.find_by_permalink(params[:permalink])
     @bestSellers = bestSellers
+    @products_related=  products_related
     @attributes = @product.product_attributes.public.to_a
   end
    
