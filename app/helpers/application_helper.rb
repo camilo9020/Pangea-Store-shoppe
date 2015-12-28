@@ -2,6 +2,12 @@ module ApplicationHelper
 	def bestSellers
 	Shoppe::Product.root.ordered.includes(:product_categories, :variants)[0,4]
 	end
+
+
+	def products_related
+		Shoppe::Product.root.ordered.includes(:product_categories, :variants)[0,3]
+	end
+
 	
 	def belongs_permalink(permalink,category_id,subcategory_id)
     if subcategory_id
@@ -43,7 +49,6 @@ module ApplicationHelper
      .where('shoppe_product_category_translations.name IN (:categories) OR shoppe_product_category_translations_parent.name IN (:categories)',{categories: params[:categories]})
 
   end
-  
   def filterBrands(products,params)
       products.joins('LEFT OUTER JOIN "shoppe_product_attributes" ON "shoppe_product_attributes"."product_id" = "shoppe_products"."id"')
       .where('shoppe_product_attributes.value IN (:brands) AND shoppe_product_attributes.key == "Marca"',{brands: params[:brands]})  
@@ -52,5 +57,5 @@ module ApplicationHelper
   def filterPrice(products,params)
       products.where('(shoppe_products.price BETWEEN :min AND :max AND variants_shoppe_products.price IS NULL ) OR (variants_shoppe_products.price BETWEEN :min AND :max ) ',{min: params[:minPrice] , max: params[:maxPrice]})  
   end
-  
+
 end
