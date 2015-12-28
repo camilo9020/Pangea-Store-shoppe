@@ -178,14 +178,22 @@
          <!-- .main-content -->
          
          <div class="col-sm-3 aside">
+            <%= form_tag home_path, :method => 'get', :id => "filterform" do |f| %>  
+               
+             
             <div class="widget">
                <h3 class="widget-title">Marcas</h3>
                <div class="widget-body">
                   <ul class="list-unstyled">                        
                      <% @product_brands.each do |brand, products| %>
-                     <li>
-                        <input type="checkbox" name="brands" id="brands-<%= brand %>" value="<%= brand %>">
-                        <label for="brands-<%= brand %>"><span></span> <%= brand %> <span>(<%= products.count %>)</span></label>
+                     <li>                        
+                        <%= check_box_tag "brands[]" , brand ,
+                         if params[:brands] 
+                         params[:brands].include?(brand)
+                          else
+                           false 
+                         end , :id => brand.parameterize.underscore %> 
+                        <label for="<%= brand.parameterize.underscore %>"><span></span> <%= brand %> <span>(<%= products.count %>)</span></label>                        
                      </li>
                      <% end %>  
                      
@@ -197,10 +205,15 @@
                <h3 class="widget-title">Categorias</h3>
                <div class="widget-body">
                   <ul class="list-unstyled">
-                     <% @products.each do |category, products| %>
-                     <li>
-                        <input type="checkbox" name="colors" id="colors-<%= category.name %>" value="<%= category.name %>">
-                        <label for="colors-<%= category.name %>"><span></span> <%= category.name %> <span>(<%= category.products.count %>)</span></label>
+                     <% @all_products.each do |category, products| %>
+                     <li>                        
+                        <%= check_box_tag "categories[]" , category.name ,
+                         if params[:categories] 
+                         params[:categories].include?(category.name)
+                          else
+                           false 
+                         end , :id => category.name.parameterize.underscore %>                                       
+                        <label for="<%= category.name.parameterize.underscore %>"><span></span> <%= category.name %> <span>(<%= products.count %>)</span></label>
                      </li>
                      <% end %>                    
                   </ul>
@@ -212,12 +225,18 @@
                <div class="widget-body">
                   <div class="price-filter">
                      <div id="price-filter-range"></div>
-                     <span class="pull-left">Price: <span id="price-filter-amount"></span></span>
-                     <a href="index.html#" class="beta-btn primary pull-right">Filter <i class="fa fa-chevron-right"></i></a>
+                     <span class="pull-left">Price: <span id="price-filter-amount"></span>
+                        
+                     </span>
+                     <%= hidden_field_tag 'minPrice' %>  
+                     <%= hidden_field_tag 'maxPrice' %>                  
+                     <%= link_to 'Filter <i class="fa fa-chevron-right"></i>'.html_safe, '#', class:"beta-btn primary pull-right" , :id => "filtersubmit", :name => nil, :onclick => "$('#filterform').submit()" %>
                      <div class="clearfix"></div>
                   </div>
                </div>
             </div>
+            
+            <% end %> 
             <!-- price range widget -->
             <div class="widget">
                <h3 class="widget-title">Mas vendidos</h3>
