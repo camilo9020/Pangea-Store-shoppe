@@ -20,7 +20,18 @@
 						<div class="woocommerce-product-rating" >
 							
 							<span class="color-gray">Stock (<%= @product.stock %>)</span>
-							
+							<table>
+							<% @attributes.each do |attribute| %>
+							<tr>
+								<th>
+									<span class="color-gray"><%= attribute.key %>:&nbsp;&nbsp;</span>
+								</th>
+								<td>
+									<span class="color-gray"><%= attribute.value %></span>
+								</td>
+							</tr>
+							<% end %>
+							</table>
 						</div>
 
 						<div class="clearfix"></div>
@@ -57,8 +68,10 @@
 								<option value="4">4</option>
 								<option value="5">5</option>
 							</select>							
-							<div class="single-item-caption">  
-							     <%= link_to "<i class='fa fa-shopping-cart'></i>".html_safe, buy_product_path(@product.product_category.permalink, @product.permalink), :method => :post, class: "add add-to-cart pull-left"  %>
+							<div class="single-item-caption">
+								 <%  if @product.orderable? && @product.stock>0 %>
+                                 <%= link_to "<i class='fa fa-shopping-cart'></i>".html_safe, buy_product_path(@product.product_category.permalink, @product.permalink), :method => :post, class: "add add-to-cart pull-left"  %>
+                                 <% end %>							     
 							   <div class="clearfix"></div>	
 						    </div>	
 						</div>
