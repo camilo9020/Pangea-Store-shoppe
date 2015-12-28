@@ -5,8 +5,7 @@ $ ->
 
   updateOrderItemsFromRemote = (data)-> 
     
-    if data.status == 'complete'
-      console.log(data)  
+    if data.status == 'complete'        
       if data.items == undefined         
         $('div.cart-item').replaceWith('');
         $('div.checkout-order-items').replaceWith('');   
@@ -33,5 +32,10 @@ $ ->
 
   $('body').on 'click', 'div.cart-item a.ajax, .add-to-cart', -> ajaxLink.call(this, updateOrderItemsFromRemote)
   $('body').on 'click', 'a.verMas' , ->
-      $('div.hideProduct#'+$(this)[0].id).toggleClass('hideProduct')      
+      $('div.hideProduct#'+$(this)[0].id).toggleClass('hideProduct')
+  $('#price-filter-amount').on 'change', ->      
+      $('#minPrice').val($('#price-filter-amount').text().split('-')[0].replace('$','').trim())
+      $('#maxPrice').val($('#price-filter-amount').text().split('-')[1].replace('$','').trim())
+  $('#minPrice').val(getUrlParameter('minPrice')||0)
+  $('#maxPrice').val(getUrlParameter('maxPrice')||500)   
      
