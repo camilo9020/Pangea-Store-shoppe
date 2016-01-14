@@ -1,0 +1,63 @@
+<div class="inner-header">
+   <div class="container">
+      <div class="pull-left">
+         <h6 class="inner-title">Ingreso</h6>
+      </div>
+      <div class="pull-right">
+         <div class="beta-breadcrumb">
+            <a href="index.html">Home</a> / <span>Ingreso</span>
+         </div>
+      </div>
+      <div class="clearfix"></div>
+   </div>
+</div>
+<div class="container">
+   <div id="content">      
+      <div class="space10">&nbsp;</div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>        
+        <% flash.each do |name, msg| %>
+          <% if name == 'Alert' %>
+            <% if msg.class == Array %>
+              <% msg.each do |message| %>
+                <%= content_tag :li, message, :id => "flash_#{name}" %>
+              <% end %>
+            <% else %>
+              <%= content_tag :li, msg, :id => "flash_#{name}" %>      
+            <% end %> 
+            <br/>
+          <% end %>
+        <% end %>
+         <div class="row">
+            <div class="col-sm-6">
+               <h4>Iniciar Sesión</h4>
+               <div class="space20">&nbsp;</div>
+               <div class="form-block">
+                  <%= f.label :email, "Correo Electrónico" %>
+                  <%= f.email_field :email %>                  
+               </div>               
+               <div class="form-block">
+                  <%= f.label :password %>
+                  <%= f.password_field :password, autocomplete: "off" %>                 
+               </div>             
+               
+               
+               <div class="space20">&nbsp;</div>
+             
+              
+                <div class="actions">
+                  <div class="text-center">
+                        <%= link_to "Iniciar Sesión<i class='fa fa-chevron-right'></i>".html_safe , "#", :onclick => "$('#new_user').submit()", :class => "beta-btn primary"  %>
+                  </div>
+                </div>
+              
+            </div>
+            <div class="col-sm-6">
+               
+            </div>
+         </div>
+      <% end %>
+   </div>
+   <!-- #content -->
+</div>
+<!-- .container -->

@@ -16,13 +16,23 @@
             <div class="container">
                <div class="pull-left auto-width-left">
                   <ul class="top-menu menu-beta l-inline">
-                     <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                     <li><%= link_to('<i class="fa fa-home"></i> Home'.html_safe, home_path) %></li>                      
                      <li><a href="index.html#"><i class="fa fa-sitemap"></i>Mapa del Sitio</a></li>
                   </ul>
                </div>
                <div class="pull-right auto-width-right">
                   <ul class="top-details menu-beta l-inline">
-                     <li><a href="index.html#"><i class="fa fa-user"></i>Ingresar</a></li>
+                     <% if user_signed_in? %>
+                        <li> <%= link_to current_user.email, edit_user_registration_path  %>
+                             
+                        <li>
+                        <%= link_to('<i class="fa fa-user"></i>Salir'.html_safe, destroy_user_session_path, :method => :delete) %>        
+                        </li>
+                        <% else %>
+                         <li><%= link_to '<i class="fa fa-user"></i>Registrarse'.html_safe, new_user_registration_path  %></li> 
+                         <li><%= link_to '<i class="fa fa-user"></i>Ingresar'.html_safe, new_user_session_path  %></li>
+                     <% end %>
+                    
                      <li class="hidden-xs">
                         <select name="languages">
                            <option value="en">English</option>

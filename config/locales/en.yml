@@ -20,4 +20,41 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    format: "%{message}"  
+  activerecord:
+    errors:      
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "El campo Nombre no puede ser vacío"
+              invalid: "El campo Nombre no cumple con el formato"
+            last_name:
+              blank: "El campo Apellido no puede ser vacío"
+              invalid: "El campo Apellido no cumple con el formato"
+            state:
+              blank: "El campo Departamento no puede ser vacío"
+              invalid: "El campo Departamento no cumple con el formato"
+            city:
+              blank: "El campo Ciudad no puede ser vacío"
+              invalid: "El campo Ciudad no cumple con el formato"
+            address:
+              blank: "El campo Dirección no puede ser vacío"
+              invalid: "El campo Dirección no cumple con el formato"
+            email:
+              blank: "El campo Email no puede ser vacío"
+              invalid: "El campo Email no cumple con el formato"
+              taken: "El Email ya se encuentra registrado"
+            phone:
+              blank: "El campo Telefono no puede ser vacío"
+              invalid: "El campo Telefono no cumple con el formato"
+            current_password:
+              blank: "El campo Password Actual no puede ser vacío"
+              too_short: "El campo Password Actual no cumple con la longitud mínima de 8"
+              invalid: "Usuario o contraseña inválido"
+            password:
+              blank: "El campo Password no puede ser vacío"
+              too_short: "El campo Password no cumple con la longitud mínima de 8"              
+            password_confirmation:
+              confirmation: "La confimación del password no coincide"
