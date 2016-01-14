@@ -58,13 +58,6 @@ module ApplicationHelper
       products.where('(shoppe_products.price BETWEEN :min AND :max AND variants_shoppe_products.price IS NULL ) OR (variants_shoppe_products.price BETWEEN :min AND :max ) ',{min: params[:minPrice] , max: params[:maxPrice]})  
   end
 
-<<<<<<< HEAD
+
 end
 
-  
-  
-  
-
-=======
-end
->>>>>>> carrito
