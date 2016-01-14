@@ -22,7 +22,12 @@
       <div class="clearfix"></div>
       <div class="center">
          <div class="space10">&nbsp;</div>
-         <%= link_to 'Checkout <i class="fa fa-chevron-right"></i>'.html_safe , checkout_path , :class => "beta-btn primary text-center" %>
+         <%= link_to 'Checkout <i class="fa fa-chevron-right"></i>'.html_safe , 
+         if user_signed_in? 
+         checkout_path 
+         else
+         new_user_registration_path
+         end, :class => "beta-btn primary text-center" %>
          
       </div>
    </div>

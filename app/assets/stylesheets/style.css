@@ -799,7 +799,7 @@ strong {
 color:#000
 }
 
-input[type="text"],input[type="email"],input[type="url"],textarea {
+input[type="text"],input[type="email"],input[type="url"],input[type="password"],textarea {
 width:100%;
 border:1px solid #e1e1e1;
 height:37px;
@@ -5216,3 +5216,7 @@ color: black!important;}
 .main-menu ul li.active> a{color:black!important;}
 }
 .hideProduct{display: none;}
+input[type="text"].error,input[type="email"].error,input[type="url"].error,input[type="password"].error
+{
+ border:1px solid crimson;
+}
