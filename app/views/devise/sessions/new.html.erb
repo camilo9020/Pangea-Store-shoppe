@@ -47,8 +47,11 @@
               
                 <div class="actions">
                   <div class="text-center">
+                  <div class="col-sm-3"></div>
                         <%= link_to "Iniciar Sesión<i class='fa fa-chevron-right'></i>".html_safe , "#", :onclick => "$('#new_user').submit()", :class => "beta-btn primary"  %>
+                        <%= link_to "Olvidaste tu Password?", new_password_path('user'), :class => "login-link"  %>
                   </div>
+                  
                 </div>
               
             </div>

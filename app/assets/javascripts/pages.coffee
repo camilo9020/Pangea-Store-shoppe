@@ -37,5 +37,5 @@ $ ->
       $('#minPrice').val($('#price-filter-amount').text().split('-')[0].replace('$','').trim())
       $('#maxPrice').val($('#price-filter-amount').text().split('-')[1].replace('$','').trim())
   $('#minPrice').val(getUrlParameter('minPrice')||0)
-  $('#maxPrice').val(getUrlParameter('maxPrice')||500)   
+  $('#maxPrice').val(getUrlParameter('maxPrice')||10000)   
      
