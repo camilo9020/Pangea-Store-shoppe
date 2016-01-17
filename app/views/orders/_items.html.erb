@@ -13,15 +13,15 @@
                   <% image_tag item.ordered_item.default_image.path, :size => "80x80" %>
                   <% end %>             
                   <div class="media-body">
-                     <p class="font-large"><%= item.ordered_item.full_name %></p>
-                     <span class="color-gray your-order-info">Color: Red</span>
-                     <span class="color-gray your-order-info">Size: M</span>
-                     <span class="color-gray your-order-info">Qty: <%= item.quantity %></span>
+                     <p class="font-small"><%= item.ordered_item.full_name %></p>
+                     <% item.ordered_item.product_attributes.each do |attribute| %>
+                     <p><span class="color-gray your-order-info"><%= attribute.key %>: <%= attribute.value %></span></p>
+                      <% end %>                    
                   </div>
                </div>
             </div>
             <div class="pull-right">
-               <h5 class="color-gray"><%= number_to_currency item.sub_total %></h5>
+               <h6 class="color-gray"><%= number_to_currency item.sub_total %></h6>
             </div>
             <div class="clearfix"></div>
          </div>
@@ -32,9 +32,9 @@
                <p class="your-order-f18">Total:</p>               
             </div>
             <div class="pull-right">
-               <h5 class="color-gray text-right"><%= number_to_currency item.sub_total %></h5>               
-               <h5 class="color-gray text-right"><%= number_to_currency item.tax_amount %></h5>               
-               <h5 class="color-gray text-right"><%= number_to_currency item.total %></h5>               
+               <h6 class="color-gray text-right"><%= number_to_currency item.sub_total %></h6>               
+               <h6 class="color-gray text-right"><%= number_to_currency item.tax_amount %></h6>               
+               <h6 class="color-gray text-right"><%= number_to_currency item.total %></h6>               
             </div>
             <div class="clearfix"></div>
          </div>

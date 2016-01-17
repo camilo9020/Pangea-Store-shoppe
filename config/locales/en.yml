@@ -46,6 +46,7 @@ en:
               blank: "El campo Email no puede ser vacío"
               invalid: "El campo Email no cumple con el formato"
               taken: "El Email ya se encuentra registrado"
+              not_found: "El email no existe, intente otro."
             phone:
               blank: "El campo Telefono no puede ser vacío"
               invalid: "El campo Telefono no cumple con el formato"
